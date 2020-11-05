@@ -1,8 +1,13 @@
-.App {
-  text-align: center;
+body {
+  background-color: rgb(179, 182, 185);
 }
 
-.person {
+.App {
+  text-align: center;
   background-color: beige;
+}
+
+
+.person {
   color: red;
 }

@@ -2,15 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 // React components
 import Person from './Person/Person';
-import Pala from './Person/pala';
-import Mage from './Person/mage';
-import UserInput from './userInput/userInput';
-import UserOutput from './userOutput/userOutput';
 
 class App extends Component {
   
   state = {
-    username: 'Bobby La Pointe',
     persons: [
       { name: 'Bobby', age: 28 },
       { name: 'Brenda', age: 29 },
@@ -18,10 +13,6 @@ class App extends Component {
     ],
     otherState: 'some other value'
   };
-  
-  usernameChangedHandler = (event) => {
-    this.setState({username: event.target.value});
-  }
   
   switchNameHandler = (newName) => {
     this.setState({
@@ -44,13 +35,16 @@ class App extends Component {
   }
   
   render() {
-    
+
     const style = {
       backGroundColor: 'white',
       font: 'inherit',
-      border: '1px solid blue',
+      border: '1px solid white',
       padding: '8px',
-      cursor: 'pointer'
+      cursor: 'pointer',
+      boxShadow: `0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+      0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 10px 0px rgba(0, 0, 0, 0.12)`
     }
     
     return (
@@ -60,49 +54,26 @@ class App extends Component {
         <button
           style={style}
           onClick={() => this.switchNameHandler('Maximus!!')}>Switch Name</button>
-        <Person
-          name={this.state.persons[0].name}
-          age={this.state.persons[0].age}
-        />
 
-        <Person
-          name={this.state.persons[1].name}
-          age={this.state.persons[1].age}
-          click={this.switchNameHandler.bind('La pointe')}
-          changed={this.nameChangeHandler}>My Hobbies: Motorbike
-        </Person>
+        <div>
+          <Person
+            name={this.state.persons[0].name}
+            age={this.state.persons[0].age}
+            />
 
-        <Person
-          name={this.state.persons[2].name}
-          age={this.state.persons[2].age}
-        />
+          <Person
+            name={this.state.persons[1].name}
+            age={this.state.persons[1].age}
+            click={this.switchNameHandler.bind('La pointe')}
+            changed={this.nameChangeHandler}>My Hobbies: Motorbike
+          </Person>
 
-        <Pala name='Palouf'> </Pala>
-        <Mage name='Atilette'></Mage>
-
-        <div className="App">
-          <ol>
-            <li>1. Lorem Ipsum is simply dummy text of the printing and</li>
-            <li>2. standard dummy text ever since the 1500s, when an unknown </li>
-            <li>3. printer took a galley of type and scrambled it to make a </li>
-            <li>4. type specimen book. It has survived not only five centuries,</li>
-            <li>5. but also the leap into electronic typesetting, remaining </li>
-            <li>6. essentially unchanged. It was popularised in the 1960s with</li>
-            <li>7. the release of Letraset sheets containing Lorem Ipsum </li>
-            <li>8. passages, and more recently with desktop publishing software</li>
-            <li>9. like Aldus PageMaker including versions of Lorem Ipsum</li>
-            <li>10. typesetting industry. Lorem Ipsum has been the industry's </li>
-          </ol>
-
-          <UserInput 
-            changed={this.usernameChangedHandler}
-            currentName={this.state.username} />
-
-          <UserOutput userName={this.state.username}/>
-          <UserOutput userName="Brenda"/>
-          <UserOutput userName="Barbie"/>
+          <Person
+            name={this.state.persons[2].name}
+            age={this.state.persons[2].age}
+          />
         </div>
-      
+
       </div>
       
       
