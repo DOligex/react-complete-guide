@@ -1,0 +1,18 @@
+.Person, .Deathknight, .mage {
+    width: 40%;
+    margin: 16px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding: 16px;
+    text-align: center;
+}
+
+.Deathknight {
+    background-color: rgb(248, 97, 97);
+    border: 1px solid rgb(248, 97, 97);
+}
+
+.mage {
+    background-color: aqua;
+    border: 1px solid aqua;
+}
