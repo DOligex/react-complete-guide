@@ -1,13 +1,16 @@
 body {
-  background-color: rgb(179, 182, 185);
+  background-color: aliceblue;
 }
 
 .App {
   text-align: center;
-  background-color: beige;
 }
 
 
-.person {
+.red {
   color: red;
+}
+
+.bold {
+  font-weight: bold;
 }
